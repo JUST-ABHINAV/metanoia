@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django stuff
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Other sensitive files
+*.key
+*.pem
