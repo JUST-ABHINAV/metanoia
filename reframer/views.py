@@ -1,9 +1,10 @@
 import requests
 from django.shortcuts import render,redirect
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
-API_KEY = "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"  # 🔑 replace with your OpenRouter key
-
+API_KEY = os.getenv("API_KEY")
 headers = {
     "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json"
