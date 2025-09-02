@@ -1,0 +1,246 @@
+{% extends "reframer/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Minimal Background Elements -->
+<div class="floating-elements">
+    <div class="floating-element element-1"></div>
+    <div class="floating-element element-2"></div>
+</div>
+
+<div class="hero" data-aos="fade-down">
+    <div class="hero-glow"></div>
+    
+    <div class="hero-logo">
+        <img src="{% static 'reframer/images/logo.png' %}" alt="Metanoia AI Logo" class="hero-logo-image">
+    </div>
+    
+    <h1 class="animated-title">
+        <span class="title-word title-word-1">Welcome to</span>
+        <span class="title-word title-word-2">Metanoia</span>
+        <span class="title-word title-word-3">AI</span>
+    </h1>
+    
+    <p class="hero-description typewriter-text">Transform your daily moments into extraordinary stories that bring hope, healing, and inspiration. Whether you're struggling to find meaning in life or seeking your creative voice, we help you see the magic in your everyday journey.</p>
+    
+    <a href="{% url 'storytelling' %}" class="btn-primary hero-btn">
+        <span class="btn-text">Transform My Story</span>
+    </a>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+        <span>Scroll to explore</span>
+    </div>
+</div>
+
+
+<div class="features" data-aos="fade-up">
+    <h2 class="section-title">What We Offer</h2>
+    
+    <div class="feature-cards-vertical">
+        <div class="feature-card-vertical" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            </div>
+            <h3>Mental Health Support</h3>
+            <p>For those struggling with mental health, we help you find hope and meaning in your daily life. Transform your struggles into stories of resilience, showing you that every moment has the potential for beauty and growth.</p>
+        </div>
+        
+        <div class="feature-card-vertical" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10,9 9,9 8,9"/>
+                </svg>
+            </div>
+            <h3>Aspiring Writers</h3>
+            <p>Discover your creative voice by seeing your daily life through the lens of storytelling. Find inspiration in the ordinary and develop your writing skills by transforming your journal entries into compelling narratives.</p>
+        </div>
+        
+        <div class="feature-card-vertical" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polygon points="10,8 16,12 10,16 10,8"/>
+                </svg>
+            </div>
+            <h3>Daily Magic</h3>
+            <p>Turn mundane moments into cinematic adventures. Whether it's making coffee or walking your dog, we help you see the extraordinary in the ordinary, making every day feel worth living.</p>
+        </div>
+    </div>
+</div>
+
+<div class="example-cards" data-aos="fade-up">
+    <h2 class="section-title">See the Magic in Action</h2>
+    
+    <div class="example-grid">
+        <div class="example-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="example-image">
+                <img src="{% static 'reframer/images/coffee.png' %}" alt="Coffee morning routine" class="example-image-content">
+            </div>
+            <div class="example-content">
+                <h3>Finding Hope in Routine</h3>
+                <div class="example-input">
+                    <strong>Original Journal Entry:</strong>
+                    <p>"I made coffee this morning and sat by the window. It was raining outside. Pretty normal day."</p>
+                </div>
+                <div class="example-output">
+                    <strong>AI Story Version:</strong>
+                    <p>"As the first light of dawn crept through my window, I embarked on my daily ritual—crafting the perfect cup of coffee. The rain tapped against the glass like nature's own percussion, creating a symphony that accompanied my morning meditation. In this quiet moment, I found myself at the center of my own personal movie scene, a reminder that even the simplest acts can be beautiful."</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="example-image">
+                <img src="{% static 'reframer/images/grocery.png' %}" alt="Grocery store adventure" class="example-image-content">
+            </div>
+            <div class="example-content">
+                <h3>Discovering Strength</h3>
+                <div class="example-input">
+                    <strong>Original Journal Entry:</strong>
+                    <p>"Went to the grocery store today. Bought some vegetables and bread. Nothing special."</p>
+                </div>
+                <div class="example-output">
+                    <strong>AI Story Version:</strong>
+                    <p>"Today's grocery run became an unexpected adventure through the aisles of possibility. Each vegetable I selected felt like choosing ingredients for a masterpiece, and the fresh bread's aroma transported me to a Parisian bakery. What started as a simple errand transformed into a quest for culinary inspiration, proving that even routine tasks can spark creativity and joy."</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="example-image">
+                <img src="{% static 'reframer/images/dog.jpg' %}" alt="Dog walking adventure" class="example-image-content">
+            </div>
+            <div class="example-content">
+                <h3>Building Connection</h3>
+                <div class="example-input">
+                    <strong>Original Journal Entry:</strong>
+                    <p>"Took my dog for a walk in the park. He chased some squirrels. Pretty typical."</p>
+                </div>
+                <div class="example-output">
+                    <strong>AI Story Version:</strong>
+                    <p>"My four-legged companion and I embarked on our daily expedition through the urban wilderness. His boundless enthusiasm turned our routine walk into a grand adventure, as he transformed into a fearless hunter pursuing elusive squirrels through the park's hidden pathways. Together, we discovered magic in the ordinary, a reminder that companionship can make any day extraordinary."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="community-section" data-aos="fade-up">
+    <h2 class="section-title">Join Our Community of Hope & Creativity</h2>
+    <p class="community-description">Connect with others who are finding meaning in their daily lives and discovering their creative voices. Share your transformed stories and inspire others on their journey of healing and self-discovery.</p>
+    
+    <div class="community-features">
+        <div class="community-feature" data-aos="fade-up" data-aos-delay="100">
+            <span class="community-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            </span>
+            <h4>Mental Health Support</h4>
+            <p>Find hope and inspiration in others' transformed daily moments</p>
+        </div>
+        
+        <div class="community-feature" data-aos="fade-up" data-aos-delay="200">
+            <span class="community-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10,9 9,9 8,9"/>
+                </svg>
+            </span>
+            <h4>Writer's Community</h4>
+            <p>Connect with aspiring writers and develop your storytelling skills</p>
+        </div>
+        
+        <div class="community-feature" data-aos="fade-up" data-aos-delay="300">
+            <span class="community-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                    <path d="M9 14h6"/>
+                    <path d="M9 18h6"/>
+                    <path d="M9 10h6"/>
+                </svg>
+            </span>
+            <h4>Share & Inspire</h4>
+            <p>Share your stories and inspire others to find beauty in their daily lives</p>
+        </div>
+    </div>
+</div>
+
+<div class="quote-section" data-aos="fade-up">
+    <div class="quote-text">
+        "Every ordinary moment has the potential to become an extraordinary story. Whether you're struggling to find hope or searching for your creative voice, Metanoia AI helps you see the magic in your daily life and share it with the world."
+    </div>
+    <div class="quote-author">— Abhinav Sharma, Founder</div>
+</div>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+// Initialize AOS animations with reduced duration for subtlety
+AOS.init({
+    duration: 400,
+    once: true,
+    offset: 100,
+    easing: 'ease-out-cubic'
+});
+
+// Minimal floating elements animation
+const elements = document.querySelectorAll('.floating-element');
+elements.forEach((element, index) => {
+    element.style.animationDelay = `${index * 4}s`;
+});
+
+// Simple interactive feature cards
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// Simple interactive example cards
+document.querySelectorAll('.example-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-3px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// Simple hero button hover effects
+const heroBtn = document.querySelector('.hero-btn');
+heroBtn.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-2px)';
+});
+heroBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0)';
+});
+
+// Scroll indicator animation
+const scrollIndicator = document.querySelector('.scroll-indicator');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        scrollIndicator.style.opacity = '0';
+    } else {
+        scrollIndicator.style.opacity = '1';
+    }
+});
+</script>
+{% endblock %}

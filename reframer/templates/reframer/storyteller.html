@@ -1,0 +1,167 @@
+{% extends "reframer/base.html" %}
+{% load static %}
+{% block content %}
+<div class="form-container">
+    <div class="form-logo">
+        <img src="{% static 'reframer/images/logo.png' %}" alt="Metanoia AI Logo" class="form-logo-image">
+    </div>
+    <h2>Transform Your Story</h2>
+    <p class="form-description">Share a moment from your day and let us help you find meaning, hope, and creative inspiration. Every experience has the potential to become something beautiful.</p>
+    
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        
+        <div class="form-section">
+            <label for="story">Your Daily Experience *</label>
+            <textarea 
+                name="story" 
+                id="story"
+                placeholder="Describe a moment from your day, your thoughts, feelings, or what you're going through..."
+                required></textarea>
+        </div>
+
+        <div class="form-row">
+            <div class="form-section">
+                <label for="creativity">Writing Style</label>
+                <div class="slider-container">
+                    <div class="slider-value">
+                        <span id="creativity-value">5</span>
+                    </div>
+                    <div class="slider-track">
+                        <div class="slider-progress" style="width: 50%;"></div>
+                        <input 
+                            type="range" 
+                            id="creativity" 
+                            name="creativity" 
+                            class="style-slider"
+                            min="1" 
+                            max="10" 
+                            value="5">
+                    </div>
+                    
+                    <div class="slider-labels">
+                        <span>Simple</span>
+                        <span>Sophisticated</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <label for="mood">Current State</label>
+                <select name="mood" id="mood">
+                    <option value="struggling">😰 Struggling</option>
+                    <option value="hopeful">✨ Hopeful</option>
+                    <option value="tired">😴 Tired</option>
+                    <option value="content">😌 Content</option>
+                    <option value="anxious">😰 Anxious</option>
+                    <option value="inspired">💡 Inspired</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <label>What You're Seeking</label>
+            <div class="category-options">
+                <label class="category-option">
+                    <input type="radio" name="category" value="hope" id="hope">
+                    <span class="category-label">💝 Hope & Healing - Finding meaning in difficult times</span>
+                </label>
+                
+                <label class="category-option">
+                    <input type="radio" name="category" value="creativity" id="creativity">
+                    <span class="category-label">🎨 Creative Inspiration - Developing your writing voice</span>
+                </label>
+                
+                <label class="category-option">
+                    <input type="radio" name="category" value="routine" id="routine">
+                    <span class="category-label">✨ Daily Magic - Finding beauty in ordinary moments</span>
+                </label>
+                
+                <label class="category-option">
+                    <input type="radio" name="category" value="challenge" id="challenge">
+                    <span class="category-label">🦁 Overcoming Challenges - Building resilience and strength</span>
+                </label>
+                
+                <label class="category-option">
+                    <input type="radio" name="category" value="other" id="other" checked>
+                    <span class="category-label">🤷‍♂️ Other - Something else entirely</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="submit-section">
+            <button type="submit" class="btn-primary">Transform My Story</button>
+        </div>
+    </form>
+
+    <div class="tips-section">
+        <h3>Writing Tips</h3>
+        <ul>
+            <li>Write about any moment, no matter how small or ordinary</li>
+            <li>Include your feelings, thoughts, or what you're going through</li>
+            <li>Don't worry about perfection - we'll help you find the beauty</li>
+            <li>Every story matters, whether you're struggling or inspired</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+// Enhanced slider functionality
+const slider = document.getElementById('creativity');
+const display = document.getElementById('creativity-value');
+const progressBar = document.querySelector('.slider-progress');
+
+slider.addEventListener('input', function() {
+    const value = this.value;
+    display.textContent = value;
+    
+    // Update progress bar
+    const percentage = ((value - 1) / 9) * 100;
+    progressBar.style.width = percentage + '%';
+    
+    // Add subtle pulse effect
+    display.classList.add('pulse');
+    setTimeout(() => display.classList.remove('pulse'), 200);
+});
+
+// Initialize slider
+slider.dispatchEvent(new Event('input'));
+
+// Interactive category items
+document.querySelectorAll('.category-option').forEach(item => {
+    item.addEventListener('click', function() {
+        this.classList.add('selected');
+        setTimeout(() => this.classList.remove('selected'), 300);
+    });
+});
+
+// Form validation enhancement
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+    const story = document.getElementById('story').value.trim();
+    if (story.length < 10) {
+        e.preventDefault();
+        const textarea = document.getElementById('story');
+        textarea.classList.add('error');
+        setTimeout(() => textarea.classList.remove('error'), 500);
+        
+        // Show error message
+        if (!document.querySelector('.error-message')) {
+            const error = document.createElement('div');
+            error.className = 'error-message';
+            error.textContent = 'Please write at least 10 characters for your story.';
+            textarea.parentElement.appendChild(error);
+        }
+    }
+});
+
+// Remove error message when typing
+document.getElementById('story').addEventListener('input', function() {
+    const error = this.parentElement.querySelector('.error-message');
+    if (error) {
+        error.remove();
+    }
+    this.classList.remove('error');
+});
+</script>
+{% endblock %}

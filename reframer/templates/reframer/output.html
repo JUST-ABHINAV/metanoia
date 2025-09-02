@@ -1,0 +1,72 @@
+{% extends "reframer/base.html" %}
+{% block content %}
+<div class="output-container" >
+    <h2>🎬 Your Reframed Story</h2>
+    <div class="story-display">
+        <div class="story-content" id="story-content">
+            {{ reframed_story|linebreaks }}
+        </div>
+    </div>
+
+    <!-- Copy button below the story content -->
+    <button id="copy-btn" style="
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    ">
+        📋 Copy
+    </button>
+
+    <!-- Regenerate button -->
+    <button id="regenerate-btn" style="
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 8px 12px;
+        background-color: #2196F3;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    ">
+        🔄 Regenerate
+    </button>
+
+    <div class="action-buttons" style="margin-top: 15px;">
+        <a href="{% url 'storytelling' %}" class="btn-secondary">
+            <span class="btn-icon">📝</span>
+            <span class="btn-text">Write Another Story</span>
+        </a>
+        <a href="{% url 'landing' %}" class="btn-primary">
+            <span class="btn-icon">🏠</span>
+            <span class="btn-text">Back to Home</span>
+        </a>
+    </div>
+</div>
+
+<script>
+const copyBtn = document.getElementById('copy-btn');
+const storyContent = document.getElementById('story-content');
+const regenerateBtn = document.getElementById('regenerate-btn');
+
+copyBtn.addEventListener('click', () => {
+    const tempText = document.createElement('textarea');
+    tempText.value = storyContent.innerText; // copy as plain text
+    document.body.appendChild(tempText);
+    tempText.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempText);
+    alert('Story copied to clipboard!');
+});
+
+regenerateBtn.addEventListener('click', () => {
+    // Reload the page to regenerate the story
+    window.location.reload();
+});
+</script>
+
+{% endblock %}
+    

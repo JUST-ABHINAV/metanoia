@@ -1,0 +1,231 @@
+{% extends "reframer/base.html" %}
+{% block content %}
+<!-- Animated Background -->
+<div class="thinking-bg">
+    <div class="bg-particles"></div>
+    <div class="bg-glow"></div>
+</div>
+
+<div class="thinking-container" data-aos="fade-in">
+    <div class="container-glow"></div>
+    
+    <!-- Main Thinking Section -->
+    <div class="thinking-section" data-aos="zoom-in" data-aos-delay="300">
+        <div class="thinking-logo">
+            <img src="{% static 'reframer/images/logo.png' %}" alt="Metanoia AI Logo" class="thinking-logo-image">
+        </div>
+        <div class="thinking-icon">
+            <div class="brain-container">
+                <div class="brain">🧠</div>
+                <div class="brain-ring"></div>
+                <div class="brain-particles"></div>
+            </div>
+        </div>
+        
+        <h1 class="thinking-title">
+            <span class="title-word title-word-1">Transforming</span>
+            <span class="title-word title-word-2">Your</span>
+            <span class="title-word title-word-3">Story</span>
+        </h1>
+        
+        <p class="thinking-subtitle typing-text">Our AI is carefully crafting your narrative, finding the hidden beauty and meaning in your words...</p>
+        
+        <!-- Thinking Cursor Animation -->
+        <div class="thinking-cursor-container">
+            <div class="cursor-line"></div>
+            <div class="cursor-blink">|</div>
+            <div class="cursor-glow"></div>
+        </div>
+        
+        <!-- Progress Indicators -->
+        <div class="progress-section" data-aos="fade-up" data-aos-delay="600">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+                <div class="progress-glow"></div>
+            </div>
+            <div class="progress-text">Processing your story...</div>
+        </div>
+    </div>
+    
+    <!-- What's Happening Section -->
+    <div class="process-section" data-aos="fade-up" data-aos-delay="900">
+        <h2 class="section-title">
+            <span class="title-icon">🔍</span>
+            What's Happening Right Now
+        </h2>
+        
+        <div class="process-steps">
+            <div class="step" data-aos="slide-right" data-aos-delay="1000">
+                <div class="step-icon">📝</div>
+                <div class="step-content">
+                    <h3>Analyzing Your Words</h3>
+                    <p>Understanding the emotions, context, and meaning behind your story</p>
+                </div>
+                <div class="step-glow"></div>
+            </div>
+            
+            <div class="step" data-aos="slide-right" data-aos-delay="1200">
+                <div class="step-icon">💡</div>
+                <div class="step-content">
+                    <h3>Finding Hidden Gems</h3>
+                    <p>Discovering the beauty, strength, and potential in your experiences</p>
+                </div>
+                <div class="step-glow"></div>
+            </div>
+            
+            <div class="step" data-aos="slide-right" data-aos-delay="1400">
+                <div class="step-icon">🎨</div>
+                <div class="step-content">
+                    <h3>Crafting Your Narrative</h3>
+                    <p>Transforming your story into a compelling, inspiring narrative</p>
+                </div>
+                <div class="step-glow"></div>
+            </div>
+            
+            <div class="step" data-aos="slide-right" data-aos-delay="1600">
+                <div class="step-icon">✨</div>
+                <div class="step-content">
+                    <h3>Adding the Magic</h3>
+                    <p>Infusing your story with hope, resilience, and creative inspiration</p>
+                </div>
+                <div class="step-glow"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Encouraging Messages -->
+    <div class="encouragement-section" data-aos="fade-up" data-aos-delay="1800">
+        <div class="encouragement-bg"></div>
+        <h2 class="section-title">
+            <span class="title-icon">💖</span>
+            While You Wait
+        </h2>
+        
+        <div class="encouragement-messages">
+            <div class="message" data-aos="fade-in" data-aos-delay="2000">
+                <div class="message-icon">💜</div>
+                <p>"Every story you share is a step toward healing and growth"</p>
+            </div>
+            
+            <div class="message" data-aos="fade-in" data-aos-delay="2200">
+                <div class="message-icon">🌟</div>
+                <p>"Your experiences have the power to inspire others"</p>
+            </div>
+            
+            <div class="message" data-aos="fade-in" data-aos-delay="2400">
+                <div class="message-icon">🌱</div>
+                <p>"Transformation happens one story at a time"</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Loading Animation -->
+    <div class="loading-animation" data-aos="zoom-in" data-aos-delay="2600">
+        <div class="loading-dots">
+            <div class="dot dot-1"></div>
+            <div class="dot dot-2"></div>
+            <div class="dot dot-3"></div>
+        </div>
+        <div class="loading-text">Almost there...</div>
+    </div>
+</div>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+// Initialize AOS animations
+AOS.init({
+    duration: 1000,
+    once: true,
+    offset: 100
+});
+
+// Typing animation for subtitle
+document.addEventListener('DOMContentLoaded', function() {
+    const text = document.querySelector('.typing-text');
+    const originalText = text.textContent;
+    text.textContent = '';
+    
+    let i = 0;
+    const typeWriter = () => {
+        if (i < originalText.length) {
+            text.textContent += originalText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    };
+    
+    setTimeout(typeWriter, 1000);
+});
+
+// Animated progress bar
+const progressFill = document.querySelector('.progress-fill');
+let progress = 0;
+
+const updateProgress = () => {
+    if (progress < 100) {
+        progress += Math.random() * 15;
+        if (progress > 100) progress = 100;
+        
+        progressFill.style.width = progress + '%';
+        
+        if (progress < 100) {
+            setTimeout(updateProgress, Math.random() * 1000 + 500);
+        } else {
+            // Progress complete - redirect to output page
+            setTimeout(() => {
+                window.location.href = "{% url 'output' %}";
+            }, 2000);
+        }
+    }
+};
+
+// Start progress after a delay
+setTimeout(updateProgress, 2000);
+
+
+
+// Thinking cursor animation
+const cursor = document.querySelector('.cursor-blink');
+setInterval(() => {
+    cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+}, 500);
+
+// Brain animation
+const brain = document.querySelector('.brain');
+setInterval(() => {
+    brain.style.transform = 'scale(1.1) rotate(5deg)';
+    setTimeout(() => {
+        brain.style.transform = 'scale(1) rotate(0deg)';
+    }, 200);
+}, 3000);
+
+// Step animations
+document.querySelectorAll('.step').forEach((step, index) => {
+    step.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    step.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+
+
+// Loading dots animation
+const dots = document.querySelectorAll('.dot');
+dots.forEach((dot, index) => {
+    dot.style.animationDelay = `${index * 0.3}s`;
+});
+
+// Auto-redirect after 15 seconds (fallback)
+setTimeout(() => {
+    if (progress < 100) {
+        window.location.href = "{% url 'output' %}";
+    }
+}, 15000);
+</script>
+{% endblock %}

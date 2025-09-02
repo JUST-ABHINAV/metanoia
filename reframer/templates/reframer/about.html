@@ -1,0 +1,269 @@
+{% extends "reframer/base.html" %}
+{% load static %}
+{% block content %}
+<div class="about-container">
+    <!-- Animated Background Elements -->
+    <div class="floating-shapes">
+        <div class="shape shape-1">✨</div>
+        <div class="shape shape-2">🌟</div>
+        <div class="shape shape-3">💫</div>
+        <div class="shape shape-4">⭐</div>
+        <div class="shape shape-5">🔮</div>
+    </div>
+
+    <div class="hero-section" data-aos="fade-down">
+        <div class="hero-glow"></div>
+        <div class="hero-logo">
+            <img src="{% static 'reframer/images/logo.png' %}" alt="Metanoia AI Logo" class="hero-logo-image">
+        </div>
+        <h1 class="animated-title">
+            <span class="title-word title-word-1">About</span>
+            <span class="title-word title-word-2">Metanoia</span>
+            <span class="title-word title-word-3">AI</span>
+        </h1>
+        <p class="hero-subtitle typing-text">Transforming lives through the power of positive storytelling</p>
+        <div class="hero-particles"></div>
+    </div>
+
+    <div class="mission-section" data-aos="zoom-in">
+        <div class="section-glow"></div>
+        <h2 class="section-title">
+            <span class="title-icon">🎯</span>
+            Our Mission
+        </h2>
+        <p class="mission-text">At Metanoia AI, we believe that every story has the potential to become a catalyst for positive change. Our mission is to help individuals reframe their life experiences, discover hidden meaning in their challenges, and emerge stronger, more resilient versions of themselves.</p>
+        
+        <div class="mission-pillars">
+            <div class="pillar" data-aos="flip-left" data-aos-delay="100">
+                <div class="pillar-icon">🧠</div>
+                <div class="pillar-content">
+                    <h3>Mental Health Support</h3>
+                    <p>Providing a safe space for people to process their experiences and find hope in difficult situations.</p>
+                </div>
+                <div class="pillar-glow"></div>
+            </div>
+            <div class="pillar" data-aos="flip-left" data-aos-delay="200">
+                <div class="pillar-icon">🌱</div>
+                <div class="pillar-content">
+                    <h3>Personal Growth</h3>
+                    <p>Helping individuals recognize their strength and potential through reframed perspectives.</p>
+                </div>
+                <div class="pillar-glow"></div>
+            </div>
+            <div class="pillar" data-aos="flip-left" data-aos-delay="300">
+                <div class="pillar-icon">🤝</div>
+                <div class="pillar-content">
+                    <h3>Community Impact</h3>
+                    <p>Creating a ripple effect of positivity that extends beyond individuals to society as a whole.</p>
+                </div>
+                <div class="pillar-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-section" data-aos="fade-up">
+        <div class="story-bg"></div>
+        <h2 class="section-title">
+            <span class="title-icon">📖</span>
+            Our Story
+        </h2>
+        <div class="story-content">
+            <div class="story-card" data-aos="slide-right">
+                <p>Metanoia AI was born from a simple yet profound realization: the way we tell our stories shapes how we see ourselves and our potential.</p>
+            </div>
+            <div class="story-card" data-aos="slide-left" data-aos-delay="200">
+                <p>Every challenge, every setback, every moment of doubt contains within it the seeds of transformation.</p>
+            </div>
+            <div class="story-card" data-aos="slide-right" data-aos-delay="400">
+                <p>We believe that mental health is not just about managing symptoms—it's about helping people discover their inherent resilience and capacity for growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="founder-section" data-aos="zoom-in">
+        <div class="founder-bg"></div>
+        <h2 class="section-title">
+            Meet Our Founder
+        </h2>
+        <div class="founder-card">
+            <div class="founder-avatar-container">
+                <img src="{% static 'reframer/images/founder.jpg' %}" alt="Abhinav Sharma" class="founder-avatar">
+                <div class="avatar-ring"></div>
+                <div class="avatar-particles"></div>
+            </div>
+            <div class="founder-info">
+                <h3 class="founder-name">Abhinav Sharma</h3>
+                <p class="founder-title">Founder & Creator</p>
+                <p class="founder-description">A passionate 2nd-year B.Tech student from India, Abhinav believes that technology should serve humanity's deepest needs. His vision for Metanoia AI stems from a deep understanding that mental health support and personal growth tools should be accessible to everyone, regardless of their background or circumstances.</p>
+                
+                <div class="founder-quote" data-aos="pulse">
+                    <div class="quote-icon">💭</div>
+                    <blockquote>
+                        "I believe that every person has the right to discover their potential and find meaning in their journey. Technology should be a bridge to healing, growth, and transformation. That's what Metanoia AI is all about."
+                    </blockquote>
+                    <div class="quote-author">— Abhinav Sharma</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="values-section" data-aos="fade-up">
+        <h2 class="section-title">
+            <span class="title-icon">💎</span>
+            Our Core Values
+        </h2>
+        <div class="values-grid">
+            <div class="value-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="value-icon">❤️</div>
+                <h4>Compassion</h4>
+                <p>We approach every story with empathy and understanding, recognizing the courage it takes to share personal experiences.</p>
+                <div class="value-glow"></div>
+            </div>
+            <div class="value-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="value-icon">🚀</div>
+                <h4>Innovation</h4>
+                <p>We leverage cutting-edge AI technology to create meaningful, personalized experiences that genuinely help people.</p>
+                <div class="value-glow"></div>
+            </div>
+            <div class="value-item" data-aos="zoom-in" data-aos-delay="300">
+                <div class="value-icon">🌍</div>
+                <h4>Accessibility</h4>
+                <p>We believe mental health support should be available to everyone, breaking down barriers of cost, location, and stigma.</p>
+                <div class="value-glow"></div>
+            </div>
+            <div class="value-item" data-aos="zoom-in" data-aos-delay="400">
+                <div class="value-icon">🔐</div>
+                <h4>Authenticity</h4>
+                <p>We stay true to the user's original story while helping them discover new perspectives and possibilities.</p>
+                <div class="value-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="impact-section" data-aos="fade-up">
+        <div class="impact-bg"></div>
+        <h2 class="section-title">
+            <span class="title-icon">🌍</span>
+            Our Vision for Society
+        </h2>
+        <p class="impact-intro">We envision a world where:</p>
+        <div class="vision-container">
+            <ul class="vision-list">
+                <li data-aos="slide-right" data-aos-delay="100">
+                    <span class="vision-icon">🧠</span>
+                    <span class="vision-text">Mental health is openly discussed and supported</span>
+                </li>
+                <li data-aos="slide-right" data-aos-delay="200">
+                    <span class="vision-icon">⭐</span>
+                    <span class="vision-text">Every individual recognizes their inherent worth and potential</span>
+                </li>
+                <li data-aos="slide-right" data-aos-delay="300">
+                    <span class="vision-icon">🌱</span>
+                    <span class="vision-text">Challenges are seen as opportunities for growth</span>
+                </li>
+                <li data-aos="slide-right" data-aos-delay="400">
+                    <span class="vision-icon">🤖</span>
+                    <span class="vision-text">Technology serves as a force for human flourishing</span>
+                </li>
+                <li data-aos="slide-right" data-aos-delay="500">
+                    <span class="vision-icon">🤝</span>
+                    <span class="vision-text">Communities are built on empathy, resilience, and hope</span>
+                </li>
+            </ul>
+        </div>
+        
+        <p class="impact-closing" data-aos="fade-in">Through Metanoia AI, we're not just building a tool—we're building a movement. A movement toward greater mental health awareness, personal empowerment, and societal transformation.</p>
+    </div>
+
+    <div class="cta-section" data-aos="zoom-in">
+        <div class="cta-bg"></div>
+        <h2 class="section-title">
+            <span class="title-icon">🚀</span>
+            Join Us in This Journey
+        </h2>
+        <p class="cta-text">Ready to transform your story and discover your potential?</p>
+        <div class="cta-buttons">
+            <a href="{% url 'storytelling' %}" class="btn-primary cta-btn">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Start Your Transformation</span>
+                <div class="btn-glow"></div>
+            </a>
+            <a href="{% url 'landing' %}" class="btn-secondary cta-btn">
+                <span class="btn-icon">🏠</span>
+                <span class="btn-text">Back to Home</span>
+                <div class="btn-glow"></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- AOS Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+// Initialize AOS animations
+AOS.init({
+    duration: 400,
+    once: true,
+    offset: 100
+});
+
+// Typing animation for hero subtitle
+document.addEventListener('DOMContentLoaded', function() {
+    const text = document.querySelector('.typing-text');
+    const originalText = text.textContent;
+    text.textContent = '';
+    
+    let i = 0;
+    const typeWriter = () => {
+        if (i < originalText.length) {
+            text.textContent += originalText.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    };
+    
+    setTimeout(typeWriter, 1000);
+});
+
+// Floating shapes animation
+const shapes = document.querySelectorAll('.shape');
+shapes.forEach((shape, index) => {
+    shape.style.animationDelay = `${index * 2}s`;
+});
+
+// Interactive value items
+document.querySelectorAll('.value-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.05)';
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Interactive pillars
+document.querySelectorAll('.pillar').forEach(pillar => {
+    pillar.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) rotateY(10deg)';
+    });
+    
+    pillar.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) rotateY(0deg)';
+    });
+});
+
+// Parallax effect for background elements
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelectorAll('.floating-shapes .shape');
+    
+    parallax.forEach((shape, index) => {
+        const speed = 0.5 + (index * 0.1);
+        shape.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
+</script>
+{% endblock %}

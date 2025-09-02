@@ -1,0 +1,52 @@
+{% extends "reframer/base.html" %}
+{% load static %}
+{% block content %}
+<div class="blog-container">
+    <div class="blog-logo">
+        <img src="{% static 'reframer/images/logo.png' %}" alt="Metanoia AI Logo" class="blog-logo-image">
+    </div>
+    <div class="coming-soon">
+        <div class="coming-soon-icon">💜</div>
+        <h1>Community of Hope & Creativity Coming Soon</h1>
+        <p>We're building a supportive community where people struggling with mental health can find hope, and aspiring writers can discover their creative voice. Share your transformed daily stories and connect with others on similar journeys.</p>
+        
+        <div class="community-preview">
+            <h3>What's Coming:</h3>
+            <div class="features-preview">
+                <div class="feature-item">
+                    <span class="feature-icon">💜</span>
+                    <span>Mental Health Support</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✍️</span>
+                    <span>Writer's Community</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤝</span>
+                    <span>Share & Connect</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✨</span>
+                    <span>Daily Inspiration</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="community-description">
+            <h4>How It Works:</h4>
+            <ul>
+                <li>Transform your daily experiences using Metanoia AI to find hope and meaning</li>
+                <li>Share your stories with others who are on similar journeys of healing</li>
+                <li>Connect with aspiring writers and develop your creative voice</li>
+                <li>Find inspiration in others' transformed daily moments</li>
+                <li>Build a supportive community of hope and creativity</li>
+            </ul>
+        </div>
+
+        <a href="{% url 'landing' %}" class="btn-primary">
+            <span class="btn-icon">🏠</span>
+            <span class="btn-text">Back to Home</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
