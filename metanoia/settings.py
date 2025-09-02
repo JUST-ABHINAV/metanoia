@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-!f32-4w6g+$w!3)k@-c%9+lo6zjgd^sgh0+q^j#wlp#f79s%0!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["metanoia-2.onrender.com", "localhost", "127.0.0.1"]
+
 
 
 # Application definition
